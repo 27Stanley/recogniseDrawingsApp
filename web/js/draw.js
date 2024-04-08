@@ -10,4 +10,12 @@ draw.path = (ctx, path, color = "black") => {
     ctx.lineTo(...path[i]);
   }
   ctx.stroke();
+  ctx.lineCap = "round";
+  ctx.lineJoin = "round";
+};
+
+draw.paths = (ctx, paths, color = "black") => {
+  for (const path of paths) {
+    draw.path(ctx, path, color);
+  }
 };
